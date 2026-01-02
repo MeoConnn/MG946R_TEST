@@ -1,16 +1,13 @@
 #ifndef FILTERS_H
 #define FILTERS_H
 
-#include <Arduino.h>
-#include "mpu6050.h"
+#include "MPU6050.h"
 
-// Cấu trúc chứa góc đã lọc
-struct Attitute {
+struct Attitude {
     float pitch;
     float roll;
 };
 
-// Khai báo hàm xử lý bộ lọc
-void Filter_Update(MPU6050_RawData raw, Attitute &angle, float dt);
+void Filter_Update(MPU6050_RawData raw, Attitude &angle, float dt);
 
 #endif

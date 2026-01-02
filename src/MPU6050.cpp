@@ -15,7 +15,7 @@ MPU6050_RawData MPU6050_Read_Raw() {
     Wire.beginTransmission(MPU6050_ADDR);
     Wire.write(0x3B); // Đọc từ thanh ghi gia tốc X
     Wire.endTransmission(false);
-    Wire.requestFrom(MPU6050_ADDR, 14, true);
+   Wire.requestFrom((uint8_t)MPU6050_ADDR, (uint8_t)14, (uint8_t)true);
 
     data.ax = (Wire.read() << 8) | Wire.read();
     data.ay = (Wire.read() << 8) | Wire.read();
